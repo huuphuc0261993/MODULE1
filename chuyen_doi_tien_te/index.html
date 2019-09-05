@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <table width='500'>
+                <tr style="font-size: 12px;text-align: center;">
+                    <td>Amount</td>
+                    <td>From Currency</td>
+                    <td>To Currency</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input name='Money' type="number" id='number' value="1"></input>
+                    </td>
+                    <td>
+                        <select name="Currency" id='tiente1'>
+                            <option value="VN">Vietnam</option>
+                            <option value="$">USD</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="Currency" width='200' id='tiente2'>
+                            <option value="VN">Vietnam</option>
+                            <option value="$">USD</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="submit" value="convert" onclick="myfuntion()"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <p id="09"></p>
+                </td>
+                </tr>
+            
+            </table>
+            <script>
+                    x = document.getElementById("tienGoc")
+                        y = document.getElementById("tienSau")
+                        function myFun() {
+                            z = document.getElementById("money").value
+                            switch (x.value) {
+                                case "VND":
+                                    switch (y.value) {
+                                        case "VND1":
+                                            document.getElementById("demo").innerHTML = "Result:" + z + " VND"
+                                            break;
+                                        case "USD1":
+                                            document.getElementById("demo").innerHTML = "Result:" + z / 23000 + " USD"
+                                            break;
+                                    }
+                                    break;
+                                //Tai sao khong co dong nay thi sai          
+                                case "USD": {
+                                    switch (y.value) {
+                                        case "USD1":
+                                            document.getElementById("demo").innerHTML = "Result:" + z + " USD"
+                                            break;
+                                        case "VND1":
+                                            document.getElementById("demo").innerHTML = "Result:" + z * 23000 + " USD"
+                                            break;
+                                    }
+                                }
+                            }
+                        }          
+             </script>
+</body>
+</html>
